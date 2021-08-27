@@ -36,5 +36,23 @@ public class MyBinaryTree<K extends Comparable<K>> {
 		this.getTreeNodes(root);
 	}
 
+	public void searchNodeInTree(K key) {
+		if (this.search(root, key)) {
+			System.out.println(key + " present ");
+		} else {
+			System.out.println(key + " not present");
+		}
+	}
 
+	private boolean search(MyBinaryTreeNode<K> root, K key) {
+		if (root == null)
+			return false;
+		int compareKey = key.compareTo(root.key);
+		if (compareKey == 0)
+			return true;
+		if (compareKey < 0)
+			return search(root.left, key);
+		else
+			return search(root.right, key);
+	}
 }
