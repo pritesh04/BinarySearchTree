@@ -9,7 +9,7 @@ public class TreeRunner {
 		t.add(67);
 		t.print();
 		
-		t.searchNodeInTree(23);
+		
 		
 		
 	}
